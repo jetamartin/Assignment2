@@ -4,17 +4,18 @@
 
 //1.  Create an application that prompts the user for their name. Then, find the length of characters in the person’s name.  Use the alert method to display the result.
 //var name = window.prompt("Please enter your full name (first and last name) :");
-//alert("Your first and last name has " + name.length + " characters in it"); 
-
+//// Note: Subtracting 1 from length to account for user entering space between first and last name
+//window.alert("Your first and last name has " + (name.length - 1) + " characters in it");
 //2.	Create an application that prompts the user for their name. Then, prompt the user for a numeric value so that they can find the letter in the string based on the number they specify. Use the alert method to display the result.
 //var name = window.prompt("Please enter your full name (first and last name) :");
-//var position = window.prompt("Please enter a number between 0 and " + (name.length - 1) + " to get the corresponding letter in your name");
-//window.alert("The letter in position " + position + " is " + name.charAt(position));
+//var position = window.prompt("Please enter a number between 1 and " + (name.length) + " to get the corresponding letter in your name's string");
+//window.alert("The letter in position " + position + " is " + name.charAt(position - 1));
 
 //3.	Create an application that prompts the user for their first name. Then, prompt the user for their last name using a second prompt. Use the alert method to display the text "Your name is: " along with the result of the first name and last name concatenated together. You will use a concatenation operator to concatenate the literal string with the result of the String object method’s result.
 //var firstName = window.prompt("Please enter your first name:");
 //var lastName = window.prompt("Please enter your last name:");
 //window.alert("Your name is: " + firstName.concat(lastName));
+
 //4.	Create an application that stores the text “The quick brown fox jumps over the lazy dog” within a variable. Then, find and display within an alert the index of the word “fox”.
 //var textString = "The quick brown fox jumps over the lazy dog";
 //window.alert("The index of the word fox is: " + textString.indexOf("fox"));
@@ -22,16 +23,17 @@
 //5.	Create an application that stores the text “The quick brown fox jumps over the lazy fox” within a variable. Then, find and display within an alert the index of the last instance of the word “fox”.
 //var textString = "The quick brown fox jumps over the lazy dog";
 //window.alert("The last index of the word fox is: " + textString.lastIndexOf("fox"));
+
 //6.	Create an application that stores the text “The quick brown fox jumped over the lazy dog” within a variable. Then, prompt the user for their full name. Then, replace the text “the lazy dog” in the variable with the name that the user enters within the prompt. Use the alert method to display the result.
 //var textString = "The quick brown fox jumps over the lazy dog";
 //var fullName = window.prompt("Please enter your full name:");
 //window.alert(textString.replace("the lazy dog", fullName));
+
 //7.	Create an application that stores the text “The quick brown fox jumps over the lazy dog” within a variable. Then, prompt the user for a word. Next, search for the word within the string that the user enters into the prompt. Use the alert method to display the result.
 //var textString = "The quick brown fox jumps over the lazy dog";
 //var guessWord = window.prompt("Please enter a word that you guess might be in a hidden phrase: ");
 //window.console.log(textString.search(guessWord.toString()));
 //var guessResults = textString.search(guessWord.toString());
-//// Note: In code below I tried saving result in a var matchResult and then outputting condition message but JSLint said it was incompleted
 //if (guessResults > 0) {
 //    window.alert("Congratulations there was a match!");
 //} else {
@@ -39,23 +41,23 @@
 //}
 
 //8.	Create an application that stores the text “The quick brown fox jumps over the lazy dog” within a variable called old_string. Then, use slice(), substr(), or substring() to extract the words “the lazy dog” from the old_string variable and store that result in a second variable called new_string. Use the alert method to display the uppercase result of new_string.
-//var textString = "The quick brown fox jumps over the lazy dog";
-//window.console.log(textString.length);
-//var new_string = textString.slice(31,43);
+//var old_string = "The quick brown fox jumps over the lazy dog";
+//var new_string = old_string.slice(31);
 //window.alert(new_string.toUpperCase());
 
-// ****** Extra Credit: You can next three lines
-// Tried to use negative values with slice...but it doesn't seem to allow you to grab last character in the string in this case "g" in dog with a negative number.
-//var new_string1 = textString.slice(-8, -1);
-//window.console.log(new_string1);
+//// ****** "Extra Credit": You can ignore next three lines
+//// Tried to use negative values with slice...but it doesn't seem to allow you to grab last character in the string in this case "g" in dog with a negative number.
+////var old_string = "The quick brown fox jumps over the lazy dog";
+////var new_string1 = old_string.slice(-8);
+////window.alert(new_string1.toUpperCase());
 
 //9.	Create an application that stores the text “            THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG          ” within a variable. Make sure to add space before and after the text so that appears very similar to the text here. Use the alert method to display the lowercase result of the variable once the space has been trimmed off.
 //var textString = "           THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG            ";
 //window.alert(textString.trim().toLowerCase());
+
 //10.	Create an application that stores the text “the quick brown fox jumps over the lazy dog” within a variable. The user clearly forgot to capitalize the first letter in the sentence. Programmatically capitalize the first letter in the sentence and display the result in an alert.
 //var textString = "the quick brown fox jumps over the lazy dog";
-//var firstLetter = textString.slice(0,1);  
-//window.alert(textString.replace(textString.charAt(0), firstLetter.toUpperCase()));
+//window.alert(textString.replace(textString.charAt(0), textString.slice(0, 1).toUpperCase()));
 
 /*--------------------------------------------------------------------------------------------------------------*/
 // ASSIGNMENT 2 - PART 2
@@ -87,18 +89,18 @@
 //***********************************************************************************************************************/
 //4.	Create an application that prompts the user for 5 numbers. Ask them to comma delimit each number so you get 1,2,3,4,5 for example. Store the result of that input in a variable and then find the largest and smallest numbers in that list. Display both of those numbers within a console window.
 //***********************************************************************************************************************/
-//var y  = window.prompt("Enter 5 numbers each followed by a comma as follows (e.g., 1,2,3,4,5): ");
-//num1 = (y.charAt(0));
-//num2 = (y.charAt(2));
-//num3 = (y.charAt(4));
-//num4 = (y.charAt(6));
-//num5 = (y.charAt(8));
-//window.console.log("The largest number entered is: " + Math.max(num1,num2,num3,num4,num5));
-//window.console.log("The smallest number entered is: " + Math.min(num1,num2,num3,num4,num5));
-
-//***********************************************************************************************************************/
-//5.	Create an application that prompts the user for a number. Now find the square root of that number and display the result within a console window. 
-//***********************************************************************************************************************/
+//var y = window.prompt("Enter 5 numbers each followed by a comma as follows (e.g., 1,2,3,4,5): ");
+//var num1 = (y.charAt(0));
+//var num2 = (y.charAt(2));
+//var num3 = (y.charAt(4));
+//var num4 = (y.charAt(6));
+//var num5 = (y.charAt(8));
+//window.console.log("The largest number entered is: " + Math.max(num1, num2, num3, num4, num5));
+//window.console.log("The smallest number entered is: " + Math.min(num1, num2, num3, num4, num5));
+//
+////***********************************************************************************************************************/
+////5.	Create an application that prompts the user for a number. Now find the square root of that number and display the result within a console window. 
+////***********************************************************************************************************************/
 //var numInput = window.prompt("Enter a number: ");
 //window.console.log(Math.sqrt(numInput));
 
@@ -118,11 +120,11 @@
 //7.	Create an application that gets the number of days in a month. Display that result within the console window.
 //***********************************************************************************************************************/
 //var theMonth = window.prompt("Enter a month number (e.g., valid values 1 - 12): ");
-//var theYear = window.prompt(" Enter a year number (e.g., 2015): "); 
+//var theYear = window.prompt(" Enter a year number (e.g., 2015): ");
 //// *** Assume user enters theMonth = 1 and theYear = 2015 for year
 //// *** Since Month is zero based entering 1 would actually represent Feburay..The 0th day of a month actually represents the 
 //// *** last day of the prior month. So by entering 1 and 2015 in combination with getDate function will yied last day of Jan 2015.  
-//window.console.log(new Date(theYear, theMonth, 0).getDate()); 
+//window.console.log(new Date(theYear, theMonth, 0).getDate());
 
 //***********************************************************************************************************************/
 //8.	Create an application that gets the month name from a particular date. Display that result within the console window.
@@ -130,53 +132,53 @@
 //// Note: I consciously augmented requirements to allow user to enter their own date...it's more flexible and facilitates testing;  
 //// Note: Month and Day must be exactly two digits long, Year must be 4 digits...didn't include logic to check for date elements with shorter lengths
 //var inputDate = window.prompt("Enter a date in the following format MM/DD/YYYY (e.g., 01/04/2015): ");
-//if (inputDate !== null && inputDate !== "" ) { <!-- Check if user hit Cancel or simply hit Ok without entering date -->
-//    inputMonth = inputDate.slice(0,2);
-//    inputDay = inputDate.slice(3,5);
-//    inputYear = inputDate.slice(-4);
-//    fullDate = inputMonth + "," + inputDay + "," + inputYear;
-//    var d = new Date(fullDate);
-//    theMonth = d.getMonth();
+//if (inputDate !== null && inputDate !== "") {
+//    var inputMonth = inputDate.slice(0, 2);
+//    var inputDay = inputDate.slice(3, 5);
+//    var inputYear = inputDate.slice(-4);
+//    var fullDate = inputMonth + "," + inputDay + "," + inputYear;
+//    var d =  new Date(fullDate);
+//    var theMonth = d.getMonth();
 //
 //    switch (theMonth) {
-//        case 0:
-//            window.console.log("January");
-//            break; 
-//        case 1:
-//            window.console.log("February");
-//            break;
-//        case 2:
-//            window.console.log("March");
-//            break;
-//        case 3:
-//            window.console.log("April");
-//            break;
-//        case 4:
-//            window.console.log("May");
-//            break;
-//        case 5:
-//            window.console.log("June");
-//            break;
-//        case 6:
-//            window.console.log("July");
-//            break;
-//        case 7:
-//            window.console.log("August");
-//            break;
-//        case 8:
-//            window.console.log("September");
-//            break;
-//        case 9:
-//            window.console.log("October");
-//            break;
-//        case 10:
-//            window.console.log("November");
-//            break;
-//        case 11:
-//            window.console.log("December");
-//            break;
-//        default: 
-//            window.console.log("The month entered is not a valid month");
+//    case 0:
+//        window.console.log("January");
+//        break;
+//    case 1:
+//        window.console.log("February");
+//        break;
+//    case 2:
+//        window.console.log("March");
+//        break;
+//    case 3:
+//        window.console.log("April");
+//        break;
+//    case 4:
+//        window.console.log("May");
+//        break;
+//    case 5:
+//        window.console.log("June");
+//        break;
+//    case 6:
+//        window.console.log("July");
+//        break;
+//    case 7:
+//        window.console.log("August");
+//        break;
+//    case 8:
+//        window.console.log("September");
+//        break;
+//    case 9:
+//        window.console.log("October");
+//        break;
+//    case 10:
+//        window.console.log("November");
+//        break;
+//    case 11:
+//        window.console.log("December");
+//        break;
+//    default:
+//        window.console.log("The month entered is not a valid month");
 //    }
 //} else {
 //    window.alert("No date entered...try again");
@@ -189,15 +191,15 @@
 //// Note: I consciously augmented requirements to allow user to enter their own date...it's more flexible and facilitates testing;  
 //// Note: Month and Day must be exactly two digits long, Year must be 4 digits...didn't include logic to check for date elements with shorter lengths
 //var inputDate = window.prompt("Enter a date in the following format MM/DD/YYYY (e.g., 01/04/2015): ");
-//if (inputDate !== null && inputDate !== "" ) { <!-- Check if user hit Cancel or simply hit Ok without entering date -->
-//    inputMonth = inputDate.slice(0,2);
-//    inputDay = inputDate.slice(3,5);
-//    inputYear = inputDate.slice(-4);
-//    fullDate = inputMonth + "," + inputDay + "," + inputYear;
+//if (inputDate !== null && inputDate !== "") {
+//    var inputMonth = inputDate.slice(0, 2);
+//    var inputDay = inputDate.slice(3, 5);
+//    var inputYear = inputDate.slice(-4);
+//    var fullDate = inputMonth + "," + inputDay + "," + inputYear;
 //    var d = new Date(fullDate);
-//    theDay = d.getDay();
-//    if (theDay == 6 || theDay == 0) {
-//        window.console.log("WooHoo ..Party...the date falls on a weekend"); 
+//    var theDay = d.getDay();
+//    if (theDay === 6 || theDay === 0) {
+//        window.console.log("WooHoo ..Party...the date falls on a weekend");
 //    } else {
 //        window.console.log("The date entered falls on a weekday");
 //    }
@@ -213,37 +215,37 @@
 //// Note: I consciously augmented requirements to allow user to enter their own date...it's more flexible and facilitates testing;  
 //// Note: Month and Day must be exactly two digits long, Year must be 4 digits...didn't include logic to check for date elements with shorter lengths
 //var inputDate = window.prompt("Enter a date in the following format MM/DD/YYYY (e.g., 01/04/2015): ");
-//if (inputDate !== null && inputDate !== "" ) { <!-- Check if user hit Cancel or simply hit Ok without entering date -->
-//    inputMonth = inputDate.slice(0,2);
-//    inputDay = inputDate.slice(3,5);
-//    inputYear = inputDate.slice(-4);
-//    fullDate = inputMonth + "," + inputDay + "," + inputYear;
+//if (inputDate !== null && inputDate !== "") {
+//    var inputMonth = inputDate.slice(0, 2);
+//    var inputDay = inputDate.slice(3, 5);
+//    var inputYear = inputDate.slice(-4);
+//    var fullDate = inputMonth + "," + inputDay + "," + inputYear;
 //    var d = new Date(fullDate);
-//    theDay = d.getDay();
+//    var theDay = d.getDay();
 //    switch (theDay) {
-//        case 0:
-//            window.console.log("The prior day is Saturday");
-//            break; 
-//        case 1:
-//            window.console.log("The prior day is Sunday");
-//            break;
-//        case 2:
-//            window.console.log("The prior day is Monday");
-//            break;
-//        case 3:
-//            window.console.log("The prior day is Tuesday");
-//            break;
-//        case 4:
-//            window.console.log("The prior day is Wednesday");
-//            break;
-//        case 5:
-//            window.console.log("The prior day is Thursday");
-//            break;
-//        case 6:
-//            window.console.log("The prior day is Friday");
-//            break;
-//        default: 
-//            window.console.log("The day entered is not a valid day");
+//    case 0:
+//        window.console.log("The prior day is Saturday");
+//        break;
+//    case 1:
+//        window.console.log("The prior day is Sunday");
+//        break;
+//    case 2:
+//        window.console.log("The prior day is Monday");
+//        break;
+//    case 3:
+//        window.console.log("The prior day is Tuesday");
+//        break;
+//    case 4:
+//        window.console.log("The prior day is Wednesday");
+//        break;
+//    case 5:
+//        window.console.log("The prior day is Thursday");
+//        break;
+//    case 6:
+//        window.console.log("The prior day is Friday");
+//        break;
+//    default:
+//        window.console.log("The day entered is not a valid day");
 //    }
 //} else {
 //    window.alert("No date entered...try again");
@@ -253,35 +255,35 @@
 //11.	Create an application that gets the current day of the week. The twist here is that I want only the first letter of the day. If today is Tuesday, the letter T should be displayed in the console window.
 //***********************************************************************************************************************/
 //var inputDate = window.prompt("Enter a date in the following format MM/DD/YYYY (e.g., 01/04/2015): ");
-//if (inputDate !== null && inputDate !== "" ) { <!-- Check if user hit Cancel or simply hit Ok without entering date -->
-//    inputMonth = inputDate.slice(0,2);
-//    inputDay = inputDate.slice(3,5);
-//    inputYear = inputDate.slice(-4);
-//    fullDate = inputMonth + "," + inputDay + "," + inputYear;
+//if (inputDate !== null && inputDate !== "") {
+//    var inputMonth = inputDate.slice(0, 2);
+//    var inputDay = inputDate.slice(3, 5);
+//    var inputYear = inputDate.slice(-4);
+//    var fullDate = inputMonth + "," + inputDay + "," + inputYear;
 //    var d = new Date(fullDate);
-//    theDay = d.getDay();
+//    var theDay = d.getDay();
 //    switch (theDay) {
-//        case 0:
-//        case 6:
-//            firstLetter = "S";
-//            break; 
-//        case 1:
-//            firstLetter = "M";
-//            break;
-//        case 2:
-//            firstLetter = "T";
-//            break;
-//        case 3:
-//            firstLetter = "W";
-//            break;
-//        case 4:
-//            firstLetter = "T";
-//            break;
-//        case 5:
-//            firstLetter = "F";
-//            break;
-//        default: 
-//            window.console.log("The date entered is not a valid day");
+//    case 0:
+//    case 6:
+//        var firstLetter = "S";
+//        break;
+//    case 1:
+//        firstLetter = "M";
+//        break;
+//    case 2:
+//        firstLetter = "T";
+//        break;
+//    case 3:
+//        firstLetter = "W";
+//        break;
+//    case 4:
+//        firstLetter = "T";
+//        break;
+//    case 5:
+//        firstLetter = "F";
+//        break;
+//    default:
+//        window.console.log("The date entered is not a valid day");
 //    }
 //    window.console.log(firstLetter);
 //} else {
@@ -303,16 +305,18 @@
 //    window.console.log("The larger number entered is: " + input1);
 //} else if (input2 > input1) {
 //    window.console.log("The larger number entered is: " + input2);
-//} else { <!-- Although not part of specs I added this for completeness -->
-//    window.console.log("The two numbers are equal"); 
+//} else {// Although not part of specs I added this for completeness -->
+//    window.console.log("The two numbers are equal");
 //}
 
 //***********************************************************************************************************************/
 //13.	Create an application that records the marks for the following five students. Then, these marks are used to determine the corresponding grade. All 5 students and their grades should be displayed within the console window. 
 //***********************************************************************************************************************/
-// 
-//function calcGrade (score) {
-//switch(true) {
+//
+//"use strict";
+//function calcGrade(score) {
+//    var grade;
+//    switch (true) {
 //    case (score < 60):
 //        grade = "F";
 //        break;
@@ -333,18 +337,18 @@
 //    }
 //    return grade;
 //}
-
+//
 //var ursulaScore = 80;
 //var paulScore = 77;
 //var henryScore = 88;
 //var tabithaScore = 95;
-//var lucyScore = 68; 
+//var lucyScore = 68;
 //
 //var ursulaGrade = calcGrade(ursulaScore);
 //var paulGrade = calcGrade(paulScore);
 //var henryGrade = calcGrade(henryScore);
 //var tabithaGrade = calcGrade(tabithaScore);
-//var lucyGrade = calcGrade(lucyScore); 
+//var lucyGrade = calcGrade(lucyScore);
 //
 //window.console.log("Student Name | Score | Grade ");
 //window.console.log("Ursula          " + ursulaScore + "       " + ursulaGrade);
@@ -369,11 +373,11 @@
 //***********************************************************************************************************************/
 
 //var i;
-//for (i=1; i<=15; i++) {
-//    if (i%2 == 0) {
-//        window.console.log(i + " is an even number");                           
+//for (i = 1; i <= 15; i += 1) {
+//    if (i % 2 === 0) {
+//        window.console.log(i + " is an even number");
 //    } else {
-//       window.console.log(i + " is an odd number");
+//        window.console.log(i + " is an odd number");
 //    }
 //}
 
@@ -383,18 +387,18 @@
 //var i;
 //var divisibleBy3 = false;
 //var divisibleBy5 = false;
-//for (i=1; i<=100; i++) {
-//    <!-- Set divisibleby flags -->
-//    if (i%3 == 0) {
+//for (i = 1; i <= 100; i += 1) {
+//    //Set divisibleby flags
+//    if (i % 3 === 0) {
 //        divisibleBy3 = true;
 //    }
-//    if (i%5 == 0) {
+//    if (i % 5 === 0) {
 //        divisibleBy5 = true;
 //    }
-//    <!-- Test divisible flags and print console message -->
+//    //Test divisible flags and print console message
 //    if (divisibleBy5 || divisibleBy3) {
 //        if (divisibleBy3 && divisibleBy5) {
-//             window.console.log("FizzBuzz");
+//            window.console.log("FizzBuzz");
 //        } else if (divisibleBy3) {
 //            window.console.log("Fizz");
 //        } else {
@@ -404,11 +408,11 @@
 //        window.console.log(i);
 //    }
 //    
-//    <!-- Reset divisibleBy flags  -->
+//    // Reset divisibleBy flags  -->
 //    divisibleBy3 = false;
 //    divisibleBy5 = false;
 //}
-                           
+
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/
 //Part 4 - The “Hitchhiker’s Guide to the Galaxy” Game (5 points)
 //In this game you will explore what you’ve learned so far about variables, prompts, alerts, strings, conditionals, and more to create a game similar to the Hitchhiker’s Guide to the Galaxy. To complete the game follow the steps outlined below:
@@ -420,15 +424,15 @@
 
 //var answer = window.confirm("Are you ready to play Hitchiker's Guide to the Galaxy game?");
 //if (answer) {
-//    alert("Awesome, our hero is waiting!");
+//    window.alert("Awesome, our hero is waiting!");
 //} else {
-//    alert("Too bad, we're going to play anyway because our hero desperately needs your help!");
+//    window.alert("Too bad, we're going to play anyway because our hero desperately needs your help!");
 //}
 
 //***********************************************************************************************************************/
 //2.	Now, alert the user to the following scenario: “You are in a dark, dingy, and humid cave searching for the lost treasure of Captain Chingadera. You are disoriented, lost, hungry and extremely thirsty. You see a speck of light in the distance ahead of you, something shimmering to your right, and the sound of running water to your left. Your back is against the wall…”
 //***********************************************************************************************************************/
-//alert("You are in a dark, dingy, and humid cave searching for the lost treasure of Captain Chingadera. You are disoriented, lost, hungry and extremely thirsty. You see a speck of light in the distance ahead of you, something shimmering to your right, and the sound of running water to your left. Your back is against the wall…");
+//window.alert("You are in a dark, dingy, and humid cave searching for the lost treasure of Captain Chingadera. You are disoriented, lost, hungry and extremely thirsty. You see a speck of light in the distance ahead of you, something shimmering to your right, and the sound of running water to your left. Your back is against the wall…");
 
 
 //***********************************************************************************************************************/
@@ -440,25 +444,24 @@
 //4.	Use a switch statement to check for the literal string values forward, left, and right. If they choose forward, display the message “You walk about 100 yards and safely make your way out of the cave.” If they choose left, display the message “Your thirst has gotten the better of you. You trip on a rock, hit your head, and fall into a pool of water and drown.” If they choose right, display the message “You found the gold! You walk into a small room and see thousands of gold coins, jewels, chalices, and more. You jump into the pile of gold in celebration and immediately a hidden door slams down and traps you in the room forever.” If the user chooses anything other than those three values, display the message “The ghost of Captain Chingadera has condemned you to eternal damnation and you shall now burn in the hot excoriation for lifeless lowlifes for not choosing the correct option….loser.”
 //***********************************************************************************************************************/
 //switch (direction) {
-//    case "forward":
-//        window.alert("You walk about 100 yards and safely make your way out of the cave.");
-//        break;
-//    case "left":
-//        window.alert("Your thirst has gotten the better of you. You trip on a rock, hit your head, and fall into a pool of water and drown.");
-//        break;   
-//    case "right":
-//        window.alert("You found the gold! You walk into a small room and see thousands of gold coins, jewels, chalices, and more. You jump into the pile of gold in celebration and immediately a hidden door slams down and traps you in the room forever.");
-//        break;
+//case "forward":
+//    window.alert("You walk about 100 yards and safely make your way out of the cave.");
+//    break;
+//case "left":
+//    window.alert("Your thirst has gotten the better of you. You trip on a rock, hit your head, and fall into a pool of water and drown.");
+//    break;
+//case "right":
+//    window.alert("You found the gold! You walk into a small room and see thousands of gold coins, jewels, chalices, and more. You jump into the pile of gold in celebration and immediately a hidden door slams down and traps you in the room forever.");
+//    break;
 //}
 
 /**********************************************************************************************************************/
 //5.	Finally, ask the user to rate your game on a scale of 1 to 10. If the feedback score is between 6 and 10, display the message “Thank you, we will continue to make improvements to the game!” If the feedback score is between 1 and 5, display the message “Whatever, you weren’t very good at this game anyway!”
 //***********************************************************************************************************************/
-//var rating = window.prompt("Please rate this game on a scale of 1 to 10: "); 
+//var rating = window.prompt("Please rate this game on a scale of 1 to 10: ");
 //if (rating > 5) {
 //    window.alert("Thank you, we will continue to make improvements to the game!");
-//}
-//else {
+//} else {
 //    window.alert("Whatever, you weren’t very good at this game anyway!");
 //}
 
@@ -466,14 +469,13 @@
 //***********************************************************************************************************************/
 //6.	Before you evaluate the number that the user has entered, check to see if the user entered a valid numeric value between 1 and 10. If they don’t, default the value to 10 and proceed with the evaluation.
 //***********************************************************************************************************************/
-//var rating = window.prompt("Please rate this game on a scale of 1 to 10: "); 
+//var rating = window.prompt("Please rate this game on a scale of 1 to 10: ");
 //if (rating < 1 || rating > 10) {
 //    rating = 10;
 //}
 //if (rating > 5) {
 //    window.alert("Thank you, we will continue to make improvements to the game!");
-//}
-//else {
+//} else {
 //    window.alert("Whatever, you weren’t very good at this game anyway!");
 //}
 
@@ -500,63 +502,64 @@
 // Solution  for steps 1 - 7
 /**********************************************************************************************************************/
 //var coinFlip = Math.random();
-//window.console.log(coinFlip); 
+//window.console.log(coinFlip);
 //var choice = window.prompt("Please guess whether the value of the coinflip...enter:  Heads or Tails");
+//var result;
 //window.console.log(choice);
-//if (coinFlip <= .5) {
+//if (coinFlip <= 0.5) {
 //    result = "Heads";
 //} else {
 //    result = "Tails";
 //}
 //window.console.log(result);
 //switch (result) {
-//    case ("Heads"):
-//          if (choice == "Heads" || choice == "heads") {
-//            window.alert("The flip was Heads and you chose heads...you win!");
-//          } else {
-//            window.alert("The flip was Heads and you chose tails...you lose!");
-//          }
-//          break;
-//  case ("Tails"):
-//        if (choice == "Tails" || choice == "tails") {
-//            window.alert("The flip was Tails and you chose Tails...you win!"); 
-//        } else {
-//            window.alert("The flip was Heads and you chose tails...you lose!");
-//        }
-//        break;
-//    default:
-//        window.alert("Looks like your Heads/Tails selection was incorrect. Make sure you capitalize first letter of Heads or Tails");
+//case ("Heads"):
+//    if (choice === "Heads" || choice === "heads") {
+//        window.alert("The flip was Heads and you chose heads...you win!");
+//    } else {
+//        window.alert("The flip was Heads and you chose tails...you lose!");
+//    }
+//    break;
+//case ("Tails"):
+//    if (choice === "Tails" || choice === "tails") {
+//        window.alert("The flip was Tails and you chose Tails...you win!");
+//    } else {
+//        window.alert("The flip was Heads and you chose tails...you lose!");
+//    }
+//    break;
+//default:
+//    window.alert("Looks like your Heads/Tails selection was incorrect. Make sure you capitalize first letter of Heads or Tails");
 //}
 /**********************************************************************************************************************/
 //8.	Use two Math methods to get a solid whole number on the coin flip. Modify the evaluation of the expression in your conditional so that it now checks for a Boolean result.
 /**********************************************************************************************************************/
 //var coinFlip = Math.round(Math.random());
-//window.console.log(coinFlip); 
+//window.console.log(coinFlip);
 //var choice = window.prompt("Please guess whether the value of the coinflip...enter:  Heads or Tails");
 //window.console.log(choice);
 //if (coinFlip) {
-//    result = "Heads";
+//    var result = "Heads";
 //} else {
-//    result = "Tails";
+//    var result = "Tails";
 //}
 //window.console.log(result);
 //switch (result) {
-//    case ("Heads"):
-//          if (choice == "Heads" || choice == "heads") {
-//            window.alert("The flip was Heads and you chose heads...you win!");
-//          } else {
-//            window.alert("The flip was Heads and you chose tails...you lose!");
-//          }
-//          break;
-//  case ("Tails"):
-//        if (choice == "Tails" || choice == "tails") {
-//            window.alert("The flip was Tails and you chose Tails...you win!"); 
-//        } else {
-//            window.alert("The flip was Heads and you chose tails...you lose!");
-//        }
-//        break;
-//    default:
-//        window.alert("Looks like your Heads/Tails selection was incorrect. Make sure you capitalize first letter of Heads or Tails");
+//case ("Heads"):
+//    if (choice === "Heads" || choice === "heads") {
+//        window.alert("The flip was Heads and you chose heads...you win!");
+//    } else {
+//        window.alert("The flip was Heads and you chose tails...you lose!");
+//    }
+//    break;
+//case ("Tails"):
+//    if (choice === "Tails" || choice === "tails") {
+//        window.alert("The flip was Tails and you chose Tails...you win!");
+//    } else {
+//        window.alert("The flip was Heads and you chose tails...you lose!");
+//    }
+//    break;
+//default:
+//    window.alert("Looks like your Heads/Tails selection was incorrect. Make sure you capitalize first letter of Heads or Tails");
 //}
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/
@@ -567,27 +570,19 @@
 
 /**********************************************************************************************************************/
 //1.	Begin your application by declaring a variable called coinFlip. Do not assign the variable a number just yet.
-/**********************************************************************************************************************/
-
-/**********************************************************************************************************************/
 //2.	Create a for loop that loops 10 times.
-/**********************************************************************************************************************/
-
-/**********************************************************************************************************************/
 //3.	Within the for loop assign a randomly generated number to coinFlip. You will have to use a Math method to get this number. Also, make sure to round that number off so that you get either a 0 or 1 as the result.
-/**********************************************************************************************************************/
-
-/**********************************************************************************************************************/
 //4.	Use a conditional to check the result of the coin flip. If it’s 0, write out “Heads” into the console window. If it’s 1, write out “Tails” into the console window.
 /**********************************************************************************************************************/
 //var coinFlip;
-//for (var i=1; i<11; i++) {
+//var i;
+//for (i = 1; i < 11; i += 1) {
 //    coinFlip = Math.round(Math.random());
-//    window.console.log(coinFlip); 
+//    window.console.log(coinFlip);
 //    if (coinFlip) {
 //        window.console.log("Tails");
 //    } else {
-//        window.console.log("Heads"); 
+//        window.console.log("Heads");
 //    }
 //}
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/
@@ -607,13 +602,13 @@
 //var coinFlip;
 //do {
 //    coinFlip = Math.round(Math.random());
-//    window.console.log(coinFlip); 
+//    window.console.log(coinFlip);
 //    if (!coinFlip) {
 //        window.console.log("Heads");
 //    } else {
-//        window.console.log("Tails"); 
-//    }    
-//}   while(!coinFlip);
+//        window.console.log("Tails");
+//    }
+//} while (!coinFlip);
 
 
 
@@ -628,8 +623,9 @@
 //#####
 //######
 //#######
-//var hashTag ="";
-//for (var i=1; i<8; i++) {
+//var hashTag = "";
+//var i;
+//for (i = 1; i < 8; i += 1) {
 //    hashTag += "#";
 //    window.console.log(hashTag);
 //}
@@ -644,12 +640,13 @@
 //"0 is even" 
 //"1 is odd" 
 //"2 is even"
-//for (var i=0; i<16; i++) {
-//    if (i == 0) {
+//var i;
+//for (i = 0; i < 16; i += 1) {
+//    if (i === 0) {
 //        window.console.log(i + " is even");
-//    } else if (i%2 == 0) {
+//    } else if (i % 2 === 0) {
 //        window.console.log(i + " is even");
 //    } else {
-//        window.console.log(i + " is odd"); 
+//        window.console.log(i + " is odd");
 //    }
 //}
